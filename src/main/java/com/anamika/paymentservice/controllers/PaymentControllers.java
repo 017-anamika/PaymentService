@@ -14,12 +14,12 @@ public class PaymentControllers {
         this.paymentService = paymentService;
     }
 
-    @PostMapping("/initiate/{orderId")
+    @PostMapping("/initiate/{orderId}")
     public String generatePaymentLink(@PathVariable("orderId") String orderId){
 //        Call order service API to get the order details.
 
         //Logic to generate payment link
-        return "Payment link generated successfully";
+        return paymentService.generatePaymentLink(orderId);
     }
 
 }
